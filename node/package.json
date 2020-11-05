@@ -1,0 +1,11 @@
+{
+  "name": "mock",
+  "version": "1.0.0",
+  "description": "Mock",
+  "main": "index.js",
+  "author": "Leonardo Lucio Perez",
+  "license": "ISC",
+  "dependencies": {
+    "apimocker": "^1.1.4"
+  }
+}

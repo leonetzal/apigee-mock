@@ -1,0 +1,13 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "Test de Pruebas de Integracion",
+  "scripts": {
+    "start-api": "npm run gulp && npm run node && npm run tests",
+    "gulp": "npm install -g gulp",
+    "node": "cd node/ && npm install",
+    "tests": "cd tests/ && npm install"  
+  },
+  "author": "Leonardo Lucio Perez",
+  "license": "ISC"
+}
