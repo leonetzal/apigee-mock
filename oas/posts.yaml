@@ -1,0 +1,494 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: API Post
+  description: |
+    API para las operaciones de post en Sitio Web.
+
+host: "dev-api.italika.com.mx:8080"
+
+basePath: /web/v1
+
+schemes:
+  - http
+
+produces:
+  - application/json
+
+paths:
+  /posts/get:
+    get:
+      summary: Busqueda de todos los Posts
+      description: Consulta los posts
+      tags:
+        - Administrador de Posts
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Ok
+          schema:
+            $ref: "#/definitions/respuestaObtenerPosts"
+          examples:
+            application/json:
+              mensaje: Operación Exitosa
+              folio: "22920190128140415938"
+              resultado:
+                posts:
+                  - idPost: 1
+                    titulo: >-
+                      sunt aut facere repellat provident occaecati excepturi
+                      optio reprehenderit
+                    cuerpo: >-
+                      quia et suscipit suscipit recusandae consequuntur expedita
+                      et cum reprehenderit molestiae ut ut quas totam nostrum
+                      rerum est autem sunt rem eveniet architecto
+                  - idPost: 2
+                    titulo: qui est esse
+                    cuerpo: >-
+                      est rerum tempore vitae sequi sint nihil reprehenderit
+                      dolor beatae ea dolores neque fugiat blanditiis voluptate
+                      porro vel nihil molestiae ut reiciendis qui aperiam non
+                      debitis possimus qui neque nisi nulla
+        "400":
+          description: Solicitud incorrecta
+          schema:
+            $ref: "#/definitions/error400"
+          examples:
+            application/json:
+              codigo: 400.Sitio-Web.1000
+              mensaje: "Petición no válida, favor de validar su información"
+              folio: "22920190128134317232"
+              detalles:
+                - Peticion no valida
+        "404":
+          description: Recurso no encontrado
+          schema:
+            $ref: "#/definitions/error404"
+          examples:
+            application/json:
+              codigo: 404.Sitio-Web.1001
+              mensaje: No se encontró información
+              folio: "22920190128134317233"
+              detalles:
+                - No se obtuvo información relacionada a la consulta
+        "500":
+          description: Error interno de servidor
+          schema:
+            $ref: "#/definitions/error500"
+          examples:
+            application/json:
+              codigo: 500.Sitio-Web.1002
+              mensaje: >-
+                Problemas al procesar su solicitud favor de contactar a su
+                administrador
+              folio: "22920181120162829642"
+              detalles:
+                - Problemas internos
+
+  /posts/post:
+    post:
+      summary: Registro de un nuevo Post
+      description: Registro de Post
+      tags:
+        - Administrador de Posts
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: Parámetros de entrada
+          required: true
+          description: Datos necesarios para creacion de Post
+          in: body
+          schema:
+            $ref: "#/definitions/crearPost"
+      responses:
+        "201":
+          description: Creado
+          schema:
+            $ref: "#/definitions/respuestaCrearPost"
+          examples:
+            application/json:
+              mensaje: Operación Exitosa
+              folio: "22920190128185010287"
+              resultado:
+                idPost: "1"
+        "400":
+          description: Solicitud incorrecta
+          schema:
+            $ref: "#/definitions/error400"
+          examples:
+            application/json:
+              codigo: 400.Sitio-Web.1000
+              mensaje: "Petición no válida, favor de validar su información"
+              folio: "22920190128134317232"
+              detalles:
+                - Atributo requerido
+        "500":
+          description: Error interno de servidor
+          schema:
+            $ref: "#/definitions/error500"
+          examples:
+            application/json:
+              codigo: 500.Sitio-Web.1002
+              mensaje: >-
+                Problemas al procesar su solicitud favor de contactar a su
+                administrador
+              folio: "22920181120162829642"
+              detalles:
+                - Problemas internos
+
+  /posts/put/{idPost}:
+    put:
+      summary: Actualizacion de un Post
+      description: Actualizacion de Post
+      tags:
+        - Administrador de Posts
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: idPost
+          type: integer
+          required: true
+          description: Identificador del post
+          default: 1
+        - name: Parámetros de entrada
+          required: true
+          description: Datos necesarios para actualizacion de Post
+          in: body
+          schema:
+            $ref: "#/definitions/actualizarPost"
+      responses:
+        "200":
+          description: Ok
+          schema:
+            $ref: "#/definitions/respuestaActualizarPost"
+          examples:
+            application/json:
+              mensaje: Operación Exitosa
+              folio: "22920190128185010287"
+              resultado:
+                idPost: 3
+                titulo: ea molestias quasi exercitationem repellat qui ipsa sit aut
+                cuerpo: >-
+                  et iusto sed quo iure voluptatem occaecati omnis eligendi aut
+                  ad voluptatem doloribus vel accusantium quis pariatur
+                  molestiae porro eius odio et labore et velit aut
+        "400":
+          description: Solicitud incorrecta
+          schema:
+            $ref: "#/definitions/error400"
+          examples:
+            application/json:
+              codigo: 400.Sitio-Web.1000
+              mensaje: "Petición no válida, favor de validar su información"
+              folio: "22920190128134317232"
+              detalles:
+                - Atributo requerido
+        "404":
+          description: Recurso no encontrado
+          schema:
+            $ref: "#/definitions/error404"
+          examples:
+            application/json:
+              codigo: 404.Sitio-Web.1001
+              mensaje: No se encontró información
+              folio: "22920190128134317233"
+              detalles:
+                - No se obtuvo información relacionada a la consulta
+        "500":
+          description: Error interno de servidor
+          schema:
+            $ref: "#/definitions/error500"
+          examples:
+            application/json:
+              codigo: 500.Sitio-Web.1002
+              mensaje: >-
+                Problemas al procesar su solicitud favor de contactar a su
+                administrador
+              folio: "22920181120162829642"
+              detalles:
+                - Problemas internos
+
+  /posts/delete/{idPost}:
+    delete:
+      summary: Eliminacion de un Post
+      description: Eliminacion de Post
+      tags:
+        - Administrador de Posts
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: idPost
+          type: integer
+          required: true
+          description: Identificador del post
+          default: 1
+      responses:
+        "200":
+          description: Ok
+          schema:
+            $ref: "#/definitions/respuestaEliminarPost"
+          examples:
+            application/json:
+              mensaje: Operación Exitosa
+              folio: "22920190128185010287"
+              resultado:
+                idPost: 3
+        "400":
+          description: Solicitud incorrecta
+          schema:
+            $ref: "#/definitions/error400"
+          examples:
+            application/json:
+              codigo: 400.Sitio-Web.1000
+              mensaje: "Petición no válida, favor de validar su información"
+              folio: "22920190128134317232"
+              detalles:
+                - Atributo requerido
+        "404":
+          description: Recurso no encontrado
+          schema:
+            $ref: "#/definitions/error404"
+          examples:
+            application/json:
+              codigo: 404.Sitio-Web.1001
+              mensaje: No se encontró información
+              folio: "22920190128134317233"
+              detalles:
+                - No se obtuvo información relacionada a la consulta
+        "500":
+          description: Error interno de servidor
+          schema:
+            $ref: "#/definitions/error500"
+          examples:
+            application/json:
+              codigo: 500.Sitio-Web.1002
+              mensaje: >-
+                Problemas al procesar su solicitud favor de contactar a su
+                administrador
+              folio: "22920181120162829642"
+              detalles:
+                - Problemas internos
+
+definitions:
+  respuestaObtenerPosts:
+    type: object
+    properties:
+      mensaje:
+        type: string
+        description: Descripción de la operación
+        example: Operación Exitosa
+      folio:
+        type: string
+        description: Folio de la operación
+        example: "22920190128140415938"
+      resultado:
+        $ref: "#/definitions/resultadoBusquedasPosts"
+  resultadoBusquedasPosts:
+    type: object
+    properties:
+      posts:
+        $ref: "#/definitions/busquedasPosts"
+  busquedasPosts:
+    type: array
+    items:
+      type: object
+      properties:
+        idPost:
+          type: integer
+          description: Id del Post
+          example: 1
+        titulo:
+          type: string
+          description: Titulo del Post
+          example: >-
+            sunt aut facere repellat provident occaecati excepturi optio
+            reprehenderit
+        cuerpo:
+          type: string
+          description: Cuerpo del Post
+          example: >-
+            quia et suscipit suscipit recusandae consequuntur expedita et cum
+            reprehenderit molestiae ut ut quas totam nostrum rerum est autem
+            sunt rem eveniet architecto
+  crearPost:
+    type: object
+    required:
+      - titulo
+      - cuerpo
+    properties:
+      titulo:
+        type: string
+        description: Titulo del Post
+        example: ea molestias quasi exercitationem repellat qui ipsa sit aut
+      cuerpo:
+        type: string
+        description: Cuerpo del Post
+        example: >-
+          et iusto sed quo iure voluptatem occaecati omnis eligendi aut ad
+          voluptatem doloribus vel accusantium quis pariatur molestiae porro
+          eius odio et labore et velit aut
+  respuestaCrearPost:
+    type: object
+    properties:
+      mensaje:
+        type: string
+        description: Descripción de la operación
+        example: Operación Exitosa.
+      folio:
+        type: string
+        description: Folio de la operación
+        example: "22920190128140415938"
+      resultado:
+        $ref: "#/definitions/resultadoCrearPost"
+  resultadoCrearPost:
+    type: object
+    properties:
+      idPost:
+        description: Identificador del Post creado
+        type: integer
+        example: 1
+  actualizarPost:
+    type: object
+    required:
+      - idPost
+      - titulo
+      - cuerpo
+    properties:
+      idPost:
+        type: integer
+        description: Id del Post
+        example: 3
+      titulo:
+        type: string
+        description: Titulo del Post
+        example: ea molestias quasi exercitationem repellat qui ipsa sit aut
+      cuerpo:
+        type: string
+        description: Cuerpo del Post
+        example: >-
+          et iusto sed quo iure voluptatem occaecati omnis eligendi aut ad
+          voluptatem doloribus vel accusantium quis pariatur molestiae porro
+          eius odio et labore et velit aut
+  respuestaActualizarPost:
+    type: object
+    properties:
+      mensaje:
+        type: string
+        description: Descripción de la operación
+        example: Operación Exitosa.
+      folio:
+        type: string
+        description: Folio de la operación
+        example: "22920190128140415938"
+      resultado:
+        $ref: "#/definitions/resultadoActualizarPost"
+  resultadoActualizarPost:
+    type: object
+    properties:
+      idPost:
+        description: Identificador del Post actualizado
+        type: integer
+        example: 1
+      titulo:
+        type: string
+        description: Titulo del Post
+        example: ea molestias quasi exercitationem repellat qui ipsa sit aut
+      cuerpo:
+        type: string
+        description: Cuerpo del Post
+        example: >-
+          et iusto sed quo iure voluptatem occaecati omnis eligendi aut ad
+          voluptatem doloribus vel accusantium quis pariatur molestiae porro
+          eius odio et labore et velit aut
+  respuestaEliminarPost:
+    type: object
+    properties:
+      mensaje:
+        type: string
+        description: Descripción de la operación
+        example: Operación Exitosa
+      folio:
+        type: string
+        description: Folio de la operación
+        example: "22920190128140415938"
+      resultado:
+        $ref: "#/definitions/resultadoEliminarPost"
+  resultadoEliminarPost:
+    type: object
+    properties:
+      idPost:
+        type: integer
+        description: Id del usuario
+        example: 1
+  error400:
+    type: object
+    properties:
+      codigo:
+        type: string
+        description: Código del error
+        example: 400.Sitio-Web.1000
+      mensaje:
+        type: string
+        description: Descripción del error
+        example: "Petición no válida, favor de validar su información"
+      folio:
+        type: string
+        description: Número de folio de la operación
+        example: "22920190128134317232"
+      detalles:
+        type: array
+        items:
+          type: string
+          description: Lista de errores
+          example: Peticion no valida
+  error404:
+    type: object
+    properties:
+      codigo:
+        type: string
+        description: Código del error
+        example: 404.Sitio-Web.1001
+      mensaje:
+        type: string
+        description: Descripción del error
+        example: No se encontró información
+      folio:
+        type: string
+        description: Número de folio de la operación
+        example: "22920190128134317232"
+      detalles:
+        type: array
+        items:
+          type: string
+          description: Lista de errores
+          example: No se obtuvo información relacionada a la consulta
+  error500:
+    type: object
+    properties:
+      codigo:
+        type: string
+        description: Código del error
+        example: 500.Sitio-Web.1002
+      mensaje:
+        type: string
+        description: Descripción del error
+        example: >-
+          Problemas al procesar su solicitud favor de contactar a su
+          administrador
+      folio:
+        type: string
+        description: Número de folio de la operación
+        example: "22920190128134317232"
+      detalles:
+        type: array
+        items:
+          type: string
+          description: Lista de errores
+          example: Problemas internos

@@ -1,0 +1,119 @@
+{
+    "mockDirectory": "../node/mock",
+    "quiet": false,
+    "port": "9000",
+    "latency": 50,
+    "logRequestHeaders": false,
+    "webServices": {
+        "web/v1/posts/get": {
+            "latency": 25,
+            "verbs": [
+                "get"
+            ],
+            "responses": {
+                "get": {
+                    "httpStatus": 200,
+                    "mockFile": "posts-GET/ok.json"
+                }
+            }
+        },
+        "web/v1/posts/post": {
+            "latency": 25,
+            "verbs": [
+                "post"
+            ],
+            "switch": [
+                "$.titulo",
+                "$.cuerpo"
+            ],
+            "responses": {
+                "post": {
+                    "httpStatus": 400,
+                    "mockFile": "posts-POST/bad_request.json"
+                }
+            },
+            "switchResponses": {
+                    "$.tituloTitle$.cuerpoBody": {
+                        "httpStatus": 201,
+                        "mockFile": "posts-POST/created.json"
+                    },
+                    "$.tituloTitle$.cuerponull": {
+                        "httpStatus": 400,
+                        "mockFile": "posts-POST/bad_request.json"
+                    },
+                    "$.titulonull$.cuerponull": {
+                        "httpStatus": 500,
+                        "mockFile": "posts-POST/internal_server_error.json"
+                    }
+            }
+        },
+        "web/v1/posts/put/:idPost": {
+            "latency": 25,
+            "verbs": [
+                "put"
+            ],
+            "switch": [
+                "idPost",
+                "$.titulo",
+                "$.cuerpo"
+            ],
+            "responses": {
+                "put": {
+                    "httpStatus": 400,
+                    "mockFile": "posts-idPost-PUT/bad_request.json"
+                }
+            },
+            "switchResponses": {
+                "idPost1$.tituloTitle$.cuerpoBody": {
+                    "httpStatus": 200,
+                    "mockFile": "posts-idPost-PUT/ok.json"
+                },
+                "idPostabcde": {
+                    "httpStatus": 400,
+                    "mockFile": "posts-idPost-PUT/bad_request.json"
+                },
+                "idPost1234": {
+                    "httpStatus": 404,
+                    "mockFile": "posts-idPost-PUT/not_found.json"
+                },
+                "idPostnull": {
+                    "httpStatus": 500,
+                    "mockFile": "posts-idPost-PUT/internal_server_error.json"
+                }
+            }
+        },
+        "web/v1/posts/delete/:idPost": {
+            "latency": 25,
+            "verbs": [
+                "delete"
+            ],
+            "switch": [
+                "idPost"
+            ],
+            "responses": {
+                "delete": {
+                    "httpStatus": 400,
+                    "mockFile": "posts-idPost-DELETE/bad_request.json"
+                }
+            },
+            "switchResponses": {
+                "idPost1": {
+                    "httpStatus": 200,
+                    "mockFile": "posts-idPost-PUT/ok.json"
+                },
+                "idPostabcde": {
+                    "httpStatus": 400,
+                    "mockFile": "posts-idPost-PUT/bad_request.json"
+                },
+                "idPost1234": {
+                    "httpStatus": 404,
+                    "mockFile": "posts-idPost-PUT/not_found.json"
+                },
+                "idPostnull": {
+                    "httpStatus": 500,
+                    "mockFile": "posts-idPost-PUT/internal_server_error.json"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,1618 @@
+[
+  {
+    "description": "    Actualizar los posts en el Sitio Web.",
+    "elements": [
+      {
+        "description": "",
+        "id": "/posts/delete/{idpost}-delete;/delete/{idpost}-200-ok.",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "/delete/{idPost} 200 ok.",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I DELETE `apigeeDomain`/`deploymentSuffix`/delete/1",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:117"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 136000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "response code should be 200",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:163"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "response body should be valid json",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:158"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "response body path $.mensaje should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "response body path $.folio should be ^[A-z-0-9]{0,}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "response body path $.mensaje should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "response body path $.folio should be ^[A-z-0-9]{0,}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "response body path $.resultado.idPost should be ^([0-9])*$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "/posts/delete/{idpost}-delete;/delete/{idpost}-400-bad-request.",
+        "keyword": "Scenario",
+        "line": 22,
+        "name": "/delete/{idPost} 400 bad request.",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 24,
+            "name": "I DELETE `apigeeDomain`/`deploymentSuffix`/delete/abcde",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:117"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 42000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 26,
+            "name": "response code should be 400",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:163"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "response body should be valid json",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:158"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "response body path $.codigo should be ^400\\.Sitio-Web\\.\\d{4}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "response body path $.mensaje should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "response body path $.folio should be ^[A-z-0-9]{0,}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "response body path $.detalles[*] should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "/posts/delete/{idpost}-delete;/delete/{idpost}-404-not-found.",
+        "keyword": "Scenario",
+        "line": 37,
+        "name": "/delete/{idPost} 404 not found.",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 39,
+            "name": "I DELETE `apigeeDomain`/`deploymentSuffix`/delete/1234",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:117"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 46000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 41,
+            "name": "response code should be 404",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:163"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "response body should be valid json",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:158"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "response body path $.codigo should be ^404\\.Sitio-Web\\.\\d{4}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 44,
+            "name": "response body path $.mensaje should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 45,
+            "name": "response body path $.folio should be ^[A-z-0-9]{0,}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 46,
+            "name": "response body path $.detalles[*] should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "/posts/delete/{idpost}-delete;/delete/{idpost}-500-internal-server-error.",
+        "keyword": "Scenario",
+        "line": 52,
+        "name": "/delete/{idPost} 500 internal server error.",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 54,
+            "name": "I DELETE `apigeeDomain`/`deploymentSuffix`/delete/null",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:117"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 56,
+            "name": "response code should be 500",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:163"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 57,
+            "name": "response body should be valid json",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:158"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 58,
+            "name": "response body path $.codigo should be ^500\\.Sitio-Web\\.\\d{4}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 59,
+            "name": "response body path $.mensaje should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 60,
+            "name": "response body path $.folio should be ^[A-z-0-9]{0,}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 61,
+            "name": "response body path $.detalles[*] should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "/posts/delete/{idpost}-delete",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "/posts/delete/{idPost} DELETE",
+    "tags": [],
+    "uri": "features\\posts-DELETE.feature"
+  },
+  {
+    "description": "    Consultar los posts en el Sitio Web.",
+    "elements": [
+      {
+        "description": "",
+        "id": "/posts/get-get;/get-200-ok.",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "/get 200 ok.",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I GET `apigeeDomain`/`deploymentSuffix`/get",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:87"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "response code should be 200",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:163"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "response body should be valid json",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:158"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "response body path $.mensaje should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "response body path $.folio should be ^[A-z-0-9]{0,}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "response body path $.resultado.posts[*].idPost should be ^([0-9])*$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "response body path $.resultado.posts[*].titulo should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "response body path $.resultado.posts[*].cuerpo should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "/posts/get-get",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "/posts/get GET",
+    "tags": [],
+    "uri": "features\\posts-GET.feature"
+  },
+  {
+    "description": "    Insertar los posts en el Sitio Web.",
+    "elements": [
+      {
+        "description": "",
+        "id": "/posts/post-post;/post-201-created.",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "/post 201 created.",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I set Content-Type header to application/json",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I set body to {\"titulo\": \"Title\",\"cuerpo\": \"Body\"}",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I POST to `apigeeDomain`/`deploymentSuffix`/post",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:97"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 63000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "response code should be 201",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:163"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "response body should be valid json",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:158"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "response body path $.mensaje should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "response body path $.folio should be ^[A-z-0-9]{0,}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "response body path $.mensaje should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "response body path $.folio should be ^[A-z-0-9]{0,}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "response body path $.resultado.idPost should be ^([0-9])*$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "/posts/post-post;/post-400-bad-request.",
+        "keyword": "Scenario",
+        "line": 20,
+        "name": "/post 400 bad request.",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 22,
+            "name": "I set Content-Type header to application/json",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "I set body to {\"titulo\": \"Title\",\"cuerpo\": null}",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 24,
+            "name": "I POST to `apigeeDomain`/`deploymentSuffix`/post",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:97"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 35000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 26,
+            "name": "response code should be 400",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:163"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "response body should be valid json",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:158"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "response body path $.codigo should be ^400\\.Sitio-Web\\.\\d{4}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "response body path $.mensaje should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "response body path $.folio should be ^[A-z-0-9]{0,}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "response body path $.detalles[*] should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "/posts/post-post;/post-500-internal-server-error.",
+        "keyword": "Scenario",
+        "line": 33,
+        "name": "/post 500 internal server error.",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 35,
+            "name": "I set Content-Type header to application/json",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "I set body to {\"titulo\": null,\"cuerpo\": null}",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 37,
+            "name": "I POST to `apigeeDomain`/`deploymentSuffix`/post",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:97"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 48000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 39,
+            "name": "response code should be 500",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:163"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 40,
+            "name": "response body should be valid json",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:158"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 41,
+            "name": "response body path $.codigo should be ^500\\.Sitio-Web\\.\\d{4}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "response body path $.mensaje should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "response body path $.folio should be ^[A-z-0-9]{0,}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 44,
+            "name": "response body path $.detalles[*] should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "/posts/post-post",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "/posts/post POST",
+    "tags": [],
+    "uri": "features\\posts-POST.feature"
+  },
+  {
+    "description": "    Actualizar los posts en el Sitio Web.",
+    "elements": [
+      {
+        "description": "",
+        "id": "/posts/put/{idpost}-put;/put/{idpost}-200-ok.",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "/put/{idPost} 200 ok.",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I set Content-Type header to application/json",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I set body to {\"titulo\": \"Title\",\"cuerpo\": \"Body\"}",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I PUT `apigeeDomain`/`deploymentSuffix`/put/1",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:107"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "response code should be 200",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:163"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "response body should be valid json",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:158"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "response body path $.mensaje should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "response body path $.folio should be ^[A-z-0-9]{0,}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "response body path $.mensaje should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "response body path $.folio should be ^[A-z-0-9]{0,}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "response body path $.resultado.idPost should be ^([0-9])*$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "/posts/put/{idpost}-put;/put/{idpost}-400-bad-request.",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "/put/{idPost} 400 bad request.",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "I PUT `apigeeDomain`/`deploymentSuffix`/put/abcde",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:107"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 43000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 28,
+            "name": "response code should be 400",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:163"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "response body should be valid json",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:158"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "response body path $.codigo should be ^400\\.Sitio-Web\\.\\d{4}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "response body path $.mensaje should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "response body path $.folio should be ^[A-z-0-9]{0,}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "response body path $.detalles[*] should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "/posts/put/{idpost}-put;/put/{idpost}-404-not-found.",
+        "keyword": "Scenario",
+        "line": 39,
+        "name": "/put/{idPost} 404 not found.",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 41,
+            "name": "I PUT `apigeeDomain`/`deploymentSuffix`/put/1234",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:107"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 43,
+            "name": "response code should be 404",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:163"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 44,
+            "name": "response body should be valid json",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:158"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 45,
+            "name": "response body path $.codigo should be ^404\\.Sitio-Web\\.\\d{4}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 46,
+            "name": "response body path $.mensaje should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 47,
+            "name": "response body path $.folio should be ^[A-z-0-9]{0,}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 48,
+            "name": "response body path $.detalles[*] should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "/posts/put/{idpost}-put;/put/{idpost}-500-internal-server-error.",
+        "keyword": "Scenario",
+        "line": 54,
+        "name": "/put/{idPost} 500 internal server error.",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 56,
+            "name": "I PUT `apigeeDomain`/`deploymentSuffix`/put/null",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:107"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 58,
+            "name": "response code should be 500",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:163"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 59,
+            "name": "response body should be valid json",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:158"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 60,
+            "name": "response body path $.codigo should be ^500\\.Sitio-Web\\.\\d{4}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 61,
+            "name": "response body path $.mensaje should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 62,
+            "name": "response body path $.folio should be ^[A-z-0-9]{0,}$",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 63,
+            "name": "response body path $.detalles[*] should be ([A-Za-z])+.\\w+",
+            "match": {
+              "location": "features\\step_definitions\\apickli-gherkin.js:196"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "/posts/put/{idpost}-put",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "/posts/put/{idPost} PUT",
+    "tags": [],
+    "uri": "features\\posts-PUT.feature"
+  }
+]
